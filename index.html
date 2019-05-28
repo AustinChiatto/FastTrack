@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="global.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <title>Group View</title>
+</head>
+<body>
+    <main>
+        <div id="titleSection">
+            <h1>The Group</h1>
+        </div>
+        <div id="groupContent">
+            <div id="comparisonChart">
+                <div class="chartLabel"><h2>Group Comparison</h2></div>
+                <div class="chartContainer">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <script>
+                        var ctx = document.getElementById('myChart').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
+                                datasets: [{
+                                    label: 'Weight (lbs)',
+                                    data: [12, 19, 3, 5, 2, 3, 6],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 2
+                                }]
+                            },
+                            options: {
+                                
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                        </script>
+                </div>
+                <div class="groupButtons">
+                    <div class="button"><div class="butIcon"></div>Log Weight</div>
+                    <div class="button"><div class="butIcon"></div>Something</div>
+                </div>
+            </div>
+        </div>
+        <div id="navigation">
+            <a href="index.html" class="navButton"><div>Group</div></a>
+            <a href="personal.html" class="navButton"><div>Personal</div></a>
+        </div>
+    </main>
+    
+</body>
+</html>
